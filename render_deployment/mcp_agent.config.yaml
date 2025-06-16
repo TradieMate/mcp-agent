@@ -1,0 +1,24 @@
+execution_engine: asyncio
+logger:
+  type: console
+  level: info
+  progress_display: false
+
+mcp:
+  servers:
+    tavily:
+      command: "uvx"
+      args: ["mcp-server-tavily"]
+      env:
+        TAVILY_API_KEY: "${TAVILY_API_KEY}"
+    
+    dataforseo:
+      command: "uvx" 
+      args: ["mcp-server-dataforseo"]
+      env:
+        DATAFORSEO_LOGIN: "${DATAFORSEO_LOGIN}"
+        DATAFORSEO_PASSWORD: "${DATAFORSEO_PASSWORD}"
+
+openai:
+  # API key loaded from OPENAI_API_KEY environment variable
+  default_model: gpt-4o-mini

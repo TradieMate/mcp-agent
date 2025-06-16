@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: mcp-agent
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false"
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: TAVILY_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: DATAFORSEO_LOGIN
+        sync: false  # Set manually in Render dashboard
+      - key: DATAFORSEO_PASSWORD
+        sync: false  # Set manually in Render dashboard
+      - key: PYTHONPATH
+        value: "."
