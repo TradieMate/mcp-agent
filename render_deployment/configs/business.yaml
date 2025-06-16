@@ -1,0 +1,57 @@
+# Business Configuration - For team collaboration and productivity
+# Includes Slack integration and database access
+
+execution_engine: asyncio
+logger:
+  type: console
+  level: info
+  progress_display: false
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+    
+    filesystem:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    
+    github:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-github"]
+      env:
+        GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
+    
+    slack:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-slack"]
+      env:
+        SLACK_BOT_TOKEN: "${SLACK_BOT_TOKEN}"
+    
+    memory:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-memory"]
+    
+    # Uncomment if you have a SQLite database
+    # sqlite:
+    #   command: "npx"
+    #   args: ["-y", "@modelcontextprotocol/server-sqlite", "/tmp/business.db"]
+
+openai:
+  default_model: gpt-4o  # More capable model for business use
+
+# Required environment variables:
+# - OPENAI_API_KEY
+# - GITHUB_TOKEN
+# - SLACK_BOT_TOKEN
+
+# Update app.py server_names to: ["fetch", "filesystem", "github", "slack", "memory"]
+
+# Agent capabilities:
+# - Fetch web content
+# - Read/write files
+# - GitHub operations
+# - Send Slack messages
+# - Persistent memory
+# - Database queries (if enabled)

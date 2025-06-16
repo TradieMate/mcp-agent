@@ -1,0 +1,20 @@
+# Basic Configuration - Perfect for getting started
+# Just web fetching capabilities
+
+execution_engine: asyncio
+logger:
+  type: console
+  level: info
+  progress_display: false
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+
+openai:
+  default_model: gpt-4o-mini
+
+# Usage: Copy this to mcp_agent.config.yaml
+# Agent capabilities: Fetch web content, answer questions

@@ -1,0 +1,43 @@
+# Developer Configuration - For coding and development tasks
+# Includes GitHub integration and file operations
+
+execution_engine: asyncio
+logger:
+  type: console
+  level: info
+  progress_display: false
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+    
+    filesystem:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    
+    github:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-github"]
+      env:
+        GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"
+    
+    memory:
+      command: "npx"
+      args: ["-y", "@modelcontextprotocol/server-memory"]
+
+openai:
+  default_model: gpt-4o-mini
+
+# Required environment variables:
+# - OPENAI_API_KEY
+# - GITHUB_TOKEN
+
+# Update app.py server_names to: ["fetch", "filesystem", "github", "memory"]
+
+# Agent capabilities:
+# - Fetch web content
+# - Read/write files in /tmp
+# - GitHub repository operations
+# - Remember information between conversations

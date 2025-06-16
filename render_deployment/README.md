@@ -1,10 +1,14 @@
-# MCP Agent Deployment on Render
+# 🚀 MCP Agent Deployment on Render
 
-This directory contains the deployment configuration for running your MCP Agent on Render.
+Deploy your MCP Agent as a web application in minutes!
 
-## What This Deploys
+## 🎯 What This Deploys
 
-This deploys a Streamlit web application that provides a chat interface for your MCP agent. The agent has access to web fetching capabilities through the MCP fetch server.
+A production-ready Streamlit web application with:
+- **Chat Interface**: Clean, responsive UI for user interactions
+- **MCP Integration**: Configurable MCP servers for extended capabilities
+- **Web Fetching**: Built-in ability to retrieve and analyze web content
+- **Conversation Memory**: Maintains chat history across sessions
 
 ## Prerequisites
 
