@@ -7,11 +7,20 @@
 - OpenAI API key ([get one here](https://platform.openai.com/api-keys))
 - Render account ([sign up free](https://render.com))
 
-### Step 1: Get Your OpenAI API Key
-1. Go to https://platform.openai.com/api-keys
-2. Click "Create new secret key"
-3. Copy the key (starts with `sk-proj-...`)
-4. **Save it securely** - you'll need it in Step 3
+### Step 1: Get Your API Keys
+1. **OpenAI API Key**: https://platform.openai.com/api-keys
+   - Click "Create new secret key"
+   - Copy the key (starts with `sk-proj-...`)
+
+2. **Tavily API Key**: https://tavily.com
+   - Sign up and get your API key
+   - Copy the key (starts with `tvly-...`)
+
+3. **DataForSEO Credentials**: https://dataforseo.com
+   - Sign up for an account
+   - Get your login and password from dashboard
+
+4. **Save all securely** - you'll need them in Step 3
 
 ### Step 2: Deploy to Render
 1. **Fork/Clone this repository** to your GitHub account
@@ -24,9 +33,11 @@
 ### Step 3: Set Environment Variables
 1. **In Render dashboard**, go to your new service
 2. **Click "Environment"** tab
-3. **Add variable**:
-   - **Key**: `OPENAI_API_KEY`
-   - **Value**: Your API key from Step 1
+3. **Add these variables**:
+   - **Key**: `OPENAI_API_KEY` | **Value**: Your OpenAI key
+   - **Key**: `TAVILY_API_KEY` | **Value**: Your Tavily key  
+   - **Key**: `DATAFORSEO_LOGIN` | **Value**: Your DataForSEO login
+   - **Key**: `DATAFORSEO_PASSWORD` | **Value**: Your DataForSEO password
 4. **Save changes** (triggers redeploy)
 
 ### Step 4: Access Your Agent
@@ -39,15 +50,19 @@
 Try these prompts with your deployed agent:
 
 ```
-"Fetch the latest news from https://news.ycombinator.com"
+"Search for the latest AI news using Tavily"
 ```
 
 ```
-"Get the content from https://www.anthropic.com/research/building-effective-agents and summarize it"
+"Analyze the SEO performance of https://example.com using DataForSEO"
 ```
 
 ```
-"What's the weather like? Fetch data from https://wttr.in/london?format=j1"
+"Search for Python web scraping tutorials and summarize the top results"
+```
+
+```
+"What are the current trending topics in machine learning?"
 ```
 
 ## 🔧 Variables Reference
@@ -56,6 +71,9 @@ Try these prompts with your deployed agent:
 | Variable | Description | Where to Get |
 |----------|-------------|--------------|
 | `OPENAI_API_KEY` | Your OpenAI API key | https://platform.openai.com/api-keys |
+| `TAVILY_API_KEY` | Your Tavily search API key | https://tavily.com |
+| `DATAFORSEO_LOGIN` | Your DataForSEO login | https://dataforseo.com |
+| `DATAFORSEO_PASSWORD` | Your DataForSEO password | https://dataforseo.com |
 
 ### Automatic Variables (Set by Render)
 | Variable | Description | Value |

@@ -3,3 +3,8 @@ mcp-agent[openai]==0.1.3
 
 # Web framework
 streamlit>=1.28.0
+
+# MCP server dependencies
+tavily-python>=0.3.0  # For Tavily web search MCP server
+requests>=2.31.0      # For HTTP-based MCP servers
+aiohttp>=3.8.0        # For async MCP operations

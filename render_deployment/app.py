@@ -72,10 +72,10 @@ async def main():
         agent_class=Agent,
         llm_class=OpenAIAugmentedLLM,
         name="finder",
-        instruction="""You are an AI assistant with access to web fetching capabilities.
-        Your job is to help users by fetching information from URLs, answering questions,
-        and providing helpful responses based on the available tools.""",
-        server_names=["fetch"],  # Only using fetch server for web deployment
+        instruction="""You are an AI assistant with access to web search and SEO analysis capabilities.
+        You can search the web using Tavily and perform SEO analysis using DataForSEO.
+        Help users by searching for information, analyzing websites, and providing insights.""",
+        server_names=["tavily", "dataforseo"],  # Web search and SEO analysis servers
     )
 
     tools = await state.agent.list_tools()
