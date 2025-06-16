@@ -1,0 +1,18 @@
+execution_engine: asyncio
+logger:
+  type: console
+  level: info
+  batch_size: 100
+  flush_interval: 2
+  max_queue_size: 2048
+  progress_display: false
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+
+openai:
+  # API key will be loaded from environment variable OPENAI_API_KEY
+  default_model: gpt-4o-mini  # Using mini for cost efficiency

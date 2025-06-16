@@ -1,0 +1,8 @@
+# Core framework
+mcp-agent[openai]==0.1.3
+
+# Web framework
+streamlit>=1.28.0
+
+# Additional dependencies for deployment
+uvicorn>=0.24.0

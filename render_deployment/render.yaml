@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mcp-agent
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false"
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # This will need to be set manually in Render dashboard
+      - key: PYTHONPATH
+        value: "."
